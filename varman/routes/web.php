@@ -1,17 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 Route::get('/', function () {
     return view('employee.employee-details');
  });
 
+Route::get('employee-list/{ID}/{name}/{telephone}/{NIC}', function ($ID, $name, $telephone, $NIC) {
 
- Route::get('employee-list/{ID}/{name}/{age}/{telephone}', function ($ID, $name, $age, $telephone) {
-    return view('employee.employee-list', ['ID' => $ID, 'name' => $name, 'age' => $age, 'telephone' => $telephone]);
+    $string = Str::of($telephone)->substr(0, 3);
+    if ($string == "077") {
+        $telephone = $telephone . "-Dialog";
+    } elseif ($string == "078") {
+        $telephone = $telephone . "-Mobitel";
+    } elseif ($string == "071") {
+        $telephone = $telephone . "-Airtel";
+    } else {
+        $telephone = $telephone . "-Other";
+    }
+    return view('employee.employee-list', ['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
 });
 
-Route::view('picmathi', 'employee.mathi');
+// Route::view('picmathi', 'employee.mathi');
 
 //  Route::get('my-page/{pagename}/{bgcolor}', function ($pagename, $bgcolor) {
 //     return view('pages.' . $pagename , ['bgcolor' => $bgcolor]);
@@ -34,11 +45,16 @@ Route::view('picmathi', 'employee.mathi');
 // Route::get('/name', function () {
 //     return 'welcome to mathi';
 // });
+
 // Route::get('my-page/{name}/{age}', function ($name, $age) {
 //     return "My name is " . $name . ". You are " . $age . " years old.";
 // });
 
 // Route::get('/welcome', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function () {
 //     return view('welcome');
 // });
 
@@ -51,7 +67,7 @@ Route::view('picmathi', 'employee.mathi');
 // });
 
 // Route::get('contact', function () {
-//     return view('pages/contactus');
+//     return view('pages.contactus');
 // });
 
 // Route::get('photo', function () {

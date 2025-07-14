@@ -117,83 +117,26 @@
 <body>
     <table width="100%">
       <tr height="85">
-        <td colspan="2" class="header">{{ $name }}</td>
+        <td colspan="2" class="header"><?php echo $name; ?></td>
       </tr>
       <tr height="500">
         <td width="20%" class="sidebar">Sidebar</td>
         <td width="80%" class="main">
             <table class="contenttable" id="sub" >
-                
                     <tr>
-                        <th colspan="3"><b>{{ $name }}'s Details</b></th>
+                        <th colspan="3"><b><?php echo $name; ?>'s Details</b></th>
                     </tr>
                     <tr> 
-                        <td><b>ID : {{ $ID }}</b></td>
+                        <td><b>ID : <?php echo $ID; ?></b></td>
                     </tr>
                     <tr>
-                        <td><b>Name : {{ $name }}</b></td>
+                        <td><b>Name : <?php echo $name; ?></b></td>
                     </tr>
                     <tr>
-                        <td><b>Telephone : 
-                            @php 
-                            $string = Str::of($telephone)->substr(0, 3);
-                            @endphp
-                            @if (($string) == "077")
-                            {{ $telephone."-Dialog"}} 
-                            @elseif (($string) == "078")
-                            {{ $telephone."-Mobitel"}} 
-                            @elseif (($string) == "071")
-                            {{ $telephone."-Airtel"}}
-                            @else
-                            {{ $telephone."-Other"}}
-                            @endif                            
-                        </b></td>
+                        <td><b>Age : <?php echo $age; ?></b></td>
                     </tr>
                     <tr>
-                        <td><b>NIC : {{ $NIC }}</b></td>
-                    </tr>
-                    
-                    @php
-                    use Carbon\Carbon;
-                        $nic = $NIC;
-                        $gender = '';
-                        if (strlen($nic) == 10) {
-                            $year = '19' . substr($nic, 0, 2);
-                            $days = (int)substr($nic, 2, 3);
-                        } elseif (strlen($nic) == 12) {
-                            $year = substr($nic, 0, 4);
-                            $days = (int)substr($nic, 4, 3);
-                        } else {
-                            $year = null;
-                            $days = null;
-                        }
-                    
-                        if ($days !== null) {
-                            if ($days > 500) {
-                                $days = 500 - $days;
-                                $gender = 'Female';
-                            } elseif ($days > 0) {
-                                $gender = 'Male';
-                            }
-                        }
-                    
-                        if ($year && $days) {
-                            $dobObj = Carbon::createFromDate($year, 1, 1)->addDays($days - 1);
-                                    $dob = $dobObj->format('Y-m-d');
-                                    $age = $dobObj->age;
-                        } else {
-                            $dob = 'Invalid NIC';
-                            $age = 'N/A';
-                        }
-                    @endphp
-                    <tr>
-                    <td><b>Date Of Birth : {{ $dob }}</b></td>
-                    </tr>
-                    <tr>
-                    <td><b>Gender : {{ $gender }}</b></td>
-                    </tr>
-                    <tr>
-                        <td><b>Age : {{$age}}</b></td>
+                        <td><b>Telephone : <?php $string = Str::of($telephone)->substr(0, 3); ?><?php echo $string; ?></b></td>
                     </tr>
                     <tr>
                         <th colspan="3"><a href="/">Back to Home</a></th>
