@@ -128,6 +128,7 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>Telephone</th>
+                    <th>NIC</th>
                     <th>Show</th>
                 </tr>
                 <tr>
@@ -135,6 +136,7 @@
                     <td>Mathi</td>
                     <td>26</td>
                     <td>07773454535</td>
+                    <td>9921323123</td>
                     <td><a href="employee-list/1/Mathi/07773454535/9921323123">Show</a></td>
                 </tr>
                 <tr>
@@ -142,6 +144,7 @@
                     <td>Varman</td>
                     <td>24</td>
                     <td>0771005148</td>
+                    <td>200115600569</td>
                     <td><a href="employee-list/2/Varman/0771005148/200115600569">Show</a></td>
                 </tr>
                 <tr>
@@ -149,6 +152,7 @@
                     <td>Suthan</td>
                     <td>21</td>
                     <td>0777354545</td>
+                    <td>200432242436</td>
                     <td><a href="employee-list/3/Suthan/0777354545/200432242436">Show</a></td>
                 </tr>
                 <tr>
@@ -156,6 +160,7 @@
                     <td>Maravan</td>
                     <td>16</td>
                     <td>07777777780</td>
+                    <td>200812317365</td>
                     <td><a href="employee-list/4/Maravan/07777777780/200812317365">Show</a></td>
                 </tr>
             </table>

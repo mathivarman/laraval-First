@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('employee.employee-details');
  });
 
-Route::get('employee-list/{ID}/{name}/{telephone}/{NIC}', function ($ID, $name, $telephone, $NIC) {
+Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1", $name="mathi", $telephone="077", $NIC="200115600669") {
 
     $string = Str::of($telephone)->substr(0, 3);
     if ($string == "077") {

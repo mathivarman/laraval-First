@@ -151,9 +151,8 @@
                     </tr>
                     <tr>
                         <td><b>NIC : {{ $NIC }}</b></td>
-                    </tr>
-                    
-                    @php
+                    </tr> 
+                    <?php
                     use Carbon\Carbon;
                         $nic = $NIC;
                         $gender = '';
@@ -170,7 +169,7 @@
                     
                         if ($days !== null) {
                             if ($days > 500) {
-                                $days = 500 - $days;
+                                $days -= 500;
                                 $gender = 'Female';
                             } elseif ($days > 0) {
                                 $gender = 'Male';
@@ -178,14 +177,14 @@
                         }
                     
                         if ($year && $days) {
-                            $dobObj = Carbon::createFromDate($year, 1, 1)->addDays($days - 1);
+                             $dobObj = Carbon::createFromDate($year, 1, 1)->addDays($days - 1);
                                     $dob = $dobObj->format('Y-m-d');
                                     $age = $dobObj->age;
                         } else {
                             $dob = 'Invalid NIC';
                             $age = 'N/A';
                         }
-                    @endphp
+                    ?>
                     <tr>
                     <td><b>Date Of Birth : {{ $dob }}</b></td>
                     </tr>
