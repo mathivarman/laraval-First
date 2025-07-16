@@ -1,0 +1,82 @@
+   body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #e0eafc, #cfdef3);
+        margin: 0;
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        max-width: 500px;
+        margin: auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 12px 8px;
+        vertical-align: middle;
+    }
+
+    label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="file"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="range"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"],
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: 0.3s ease;
+    }
+
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+        cursor: pointer;
+        background-color: #0078d7;
+        color: white;
+        font-weight: bold;
+    }
+
+    input[type="button"]:hover,
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background-color: #005fa3;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="image"],
+    input[type="hidden"] {
+        margin: 5px 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }

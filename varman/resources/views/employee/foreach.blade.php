@@ -117,99 +117,27 @@
 <body>
     <table width="100%">
       <tr height="85">
-        <td colspan="2" class="header">{{$name}}</td>
+        <td colspan="2" class="header">{{$details['name']}}'s Details</td>
       </tr>
       <tr height="500">
         <td width="20%" class="sidebar">Sidebar</td>
         <td width="80%" class="main">
-      <table class="contenttable" id="sub" >
-                    <tr>
-                        <th colspan="3"><b>{{ $name }}'s Details</b></th>
-                    </tr>
-                    <tr>
-                        <th colspan="3"><img src="{{asset('images/'.$name.'.jpg')}}"></th>
-                    </tr>
-                    <tr>
-                        <td><b>ID : {{ $ID }}</b></td>
-                    </tr>
-                    <tr>
-                        <td><b>Name : {{ $name }}</b></td>
-                    </tr>
-                    <tr>
-                        <td><b>Telephone :
-                            @php
-                            $string = Str::of($telephone)->substr(0, 3);
-                            @endphp
-                            @if (($string) == "077")
-                            {{ $telephone."-Dialog"}}
-                            @elseif (($string) == "078")
-                            {{ $telephone."-Mobitel"}}
-                            @elseif (($string) == "071")
-                            {{ $telephone."-Airtel"}}
-                            @else
-                            {{ $telephone."-Other"}}
-                            @endif
-                        </b></td>
-                    </tr>
-                    <tr>
-                        <td><b>NIC : {{ $NIC }}</b></td>
-                    </tr>
-                    <?php
-                    use Carbon\Carbon;
-                        $nic = $NIC;
-                        $gender = '';
-                        if (strlen($nic) == 10) {
-                            $year = '19' . substr($nic, 0, 2);
-                            $days = (int)substr($nic, 2, 3);
-                        } elseif (strlen($nic) == 12) {
-                            $year = substr($nic, 0, 4);
-                            $days = (int)substr($nic, 4, 3);
-                        } else {
-                            $year = null;
-                            $days = null;
-                        }
+        
+                @foreach($details as $key=>$value )
+                       {{$key}}={{$value}}
+                @endforeach
+      
+         
 
-                        if ($days !== null) {
-                            if ($days > 500) {
-                                $days -= 500;
-                                $gender = 'Female';
-                            } elseif ($days > 0) {
-                                $gender = 'Male';
-                            }
-                        }
-
-                        if ($year && $days) {
-                             $dobObj = Carbon::createFromDate($year, 1, 1)->addDays($days - 1);
-                                    $dob = $dobObj->format('Y-m-d');
-                                    $age = $dobObj->age;
-                        } else {
-                            $dob = 'Invalid NIC';
-                            $age = 'N/A';
-                        }
-                    ?>
-                    <tr>
-                    <td><b>Date Of Birth : {{ $dob }}</b></td>
-                    </tr>
-                    <tr>
-                    <td><b>Gender : {{ $gender }}</b></td>
-                    </tr>
-                    <tr>
-                        <td><b>Age : {{$age}}</b></td>
-                    </tr>
-                    <tr>
-                        <th colspan="3"><a href="/">Back to Home</a></th>
-                    </tr>
-                </table>
-
-
-
+           
         </td>
       </tr>
       <tr height="85">
         <td colspan="2" class="footer">
-
+            
         </td>
       </tr>
     </table>
 </body>
 </html>
+
