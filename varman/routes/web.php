@@ -4,14 +4,34 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('form.input');
+
+// Route::get('/', function () {
+//     return view('layouts.master');
+// });
+
+
+Route::view('/', 'home');
+Route::view('about', 'pages.about');
+Route::view('contact', 'pages.contactus');
+Route::view('photo', 'pages.photo');
+
+
+Route::get('employee-details', function () {
+    return view('employee.employee-dataonly');
 });
 
-Route::post('/output', function (Request $request) {
-   // dd($request->all());
-    return view('form.receive',$request->all());
+Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1", $name="mathi", $telephone="077", $NIC="200115600669") {
+    return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
 });
+
+// Route::get('/', function () {
+//     return view('form.input');
+// });
+
+// Route::post('/output', function (Request $request) {
+//    // dd($request->all());
+//     return view('form.receive',$request->all());
+// });
 
 
 

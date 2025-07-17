@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>All Input Types</title>
+    <title>Receive All Types</title>
     <link rel="stylesheet" href="{{ asset('css/inputformstyle.css') }}">
 </head>
 
 <body>
     <div class="form-wrapper">
-        <h2>All Input Types</h2>
+        <h2>Receive All Types</h2>
         <form action="#" method="post" autocomplete="off" novalidate>
             @csrf
             <table>
@@ -99,6 +99,7 @@
 
                     </td>
                 </tr>
+
                 <tr>
                     <td><label for="grade">Select</label></td>
                     <td>

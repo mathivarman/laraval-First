@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-</head>
-<body>
-    <h1>Wel Come Home</h1>
-    <a href="/about">About page</a><br>
-    <a href="/contact">contact page</a><br>
-    <a href="/photo">photo page</a>
-</body>
-</html>
+@extends('layouts.master')
+@section('sidebar')
+    @parent
+    <li>
+        <a href="/employee-details">Employee Details</a>
+    </li>
+@endsection
+@section('header', 'Home Page')
+@section('title', 'Home Page')
+@section('content')
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the home page of our application.</p>
+    </div>
+@endsection
