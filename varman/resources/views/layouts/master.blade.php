@@ -3,115 +3,74 @@
 <head>
     <meta charset="UTF-8" />
     <title>@yield('title')</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    @yield('css')
     <style>
         body {
             background: #e3f2fd;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        table {
-            width: 100%;
-            height: 100vh;
-            border-collapse: separate;
-            border-spacing: 0;
-            box-shadow: 0 4px 24px rgba(33,150,243,0.10);
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        td {
-            border: 1px solid #bbdefb;
-            font-size: 1.2rem;
-        }
-        .header {
-            height: 100px;
-            text-align: center;
-            background: #1976d2;
-            color: #fff;
-            font-weight: bold;
-        }
-        .footer {
-            width: 10px;
-            text-align: center;
-            background: #1976d2;
-            color: #fff;
-
-        }
-        .content {
-            height: calc(100vh - 200px);
         }
         .sidebar {
-            width: 20%;
-            text-align: center;
+            min-height: 100vh;
             background: #bbdefb;
             color: #1976d2;
-
+            padding-top: 40px;
+        }
+        .sidebar .nav-link {
+            color: #1976d2;
+            font-weight: 600;
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 8px;
+            padding-left: 28px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link:focus {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+        .header, .footer {
+            background: #1976d2;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            padding: 32px 0;
+        }
+        .footer {
+            font-size: 1.1rem;
+            padding: 20px 0;
         }
         .main-content {
-            width: 80%;
-            text-align: left;
+            background: #fff;
+            padding: 40px 32px;
+            border-radius: 0 0 12px 0;
         }
-            .sidebar {
-        width: 20%;
-        text-align: left;
-        background: #bbdefb;
-        color: #1976d2;
-        padding: 0;
-        vertical-align: top;
-    }
-    .sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 40px 0 0 0;
-    }
-    .sidebar li {
-        margin: 0;
-        padding: 0;
-    }
-    .sidebar a {
-        display: block;
-        padding: 14px 28px;
-        color: #1976d2;
-        text-decoration: none;
-        font-weight: 600;
-        border-left: 4px solid transparent;
-        transition: background 0.2s, border-color 0.2s, color 0.2s;
-        border-radius: 0 20px 20px 0;
-        margin-bottom: 6px;
-    }
-    .sidebar a:hover,
-    .sidebar a:focus {
-        background: #e3f2fd;
-        color: #0d47a1;
-        border-left: 4px solid #1976d2;
-    }
-
     </style>
 </head>
 <body>
-    <table>
-        <tr class="header">
-            <td colspan="2" >
-                @yield('header')
-            </td>
-        </tr>
-        <tr class="content">
-            <td class="sidebar">
+    <div class="container-fluid p-0">
+        <div class="header">
+            @yield('header', 'Header')
+        </div>
+        <div class="row g-0" >
+            <nav class="col-md-2 sidebar">
                 @section('sidebar')
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/photo">Photo</a></li>
-                    <li><a href="/employee-details">Employee List</a></li>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/photo">Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/employee-details">Employee List</a></li>
                 </ul>
                 @show
-            </td>
-            <td class="main-content">@yield('content')</td>
-        </tr>
-        <tr class="footer">
-            <td colspan="2">Footer</td>
-        </tr>
-    </table>
+            </nav>
+            <main class="col-md-10 main-content">
+                @yield('content')
+            </main>
+        </div>
+        <div class="footer">
+            Footer
+        </div>
+    </div>
 </body>
+</html>
