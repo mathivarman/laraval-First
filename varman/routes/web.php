@@ -5,6 +5,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 
+// Route::view('/', 'layouts.dashboard');
+
 // Route::get('/', function () {
 //     return view('layouts.master');
 // });
@@ -16,8 +18,12 @@ Route::view('contact', 'pages.contactus');
 Route::view('photo', 'pages.photo');
 
 
-Route::get('employee-details', function () {
+Route::get('emp', function () {
     return view('employee.employee-dataonly');
+});
+
+Route::get('emp-form', function () {
+    return view('employee.employee-form');
 });
 
 Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1", $name="mathi", $telephone="077", $NIC="200115600669") {
@@ -58,14 +64,14 @@ Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1",
 //     return view('employee.employee-form');
 // });
 
-// Route::post('employee-list', function (Request $request) {
-//     $ID=$request->input('id');
-//     $name=$request->input('name');
-//     $telephone=$request->input('telephone');
-//     $NIC=$request->input('nic');
+Route::post('employee-listform', function (Request $request) {
+    $ID=$request->input('id');
+    $name=$request->input('name');
+    $telephone=$request->input('telephone');
+    $NIC=$request->input('nic');
 
-//      return view('employee.employee-list',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
-// });
+     return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
+});
 
 
 // Route::get('get-form', function () {

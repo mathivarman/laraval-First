@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>@yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        @vite(['resources/scss/style.scss', 'resources/js/app.js'])
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
     @yield('css')
     <style>
         body {
@@ -61,6 +62,7 @@
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="/photo">Photo</a></li>
                     <li class="nav-item"><a class="nav-link" href="/employee-details">Employee List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/employee-form">Employee Form</a></li>
                 </ul>
                 @show
             </nav>

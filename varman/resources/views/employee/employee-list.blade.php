@@ -48,7 +48,7 @@
         .contenttable a {
             background-color: #007BFF;
             color: white;
-            text-decoration: none;
+            text-decoration: none; 
             padding: 7px 18px;
             border-radius: 20px;
             display: inline-block;

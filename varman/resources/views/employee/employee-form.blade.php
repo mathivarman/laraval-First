@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>Employee Form</title>
+@extends('layouts.dashboard')
+@section('title', 'Employee Form')
+@section('css')
     <style>
-        body {
-            background: linear-gradient(135deg, #6dd5ed, #2193b0 80%);
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+
         .form-container {
             background: #fff;
             padding: 32px 40px;
@@ -20,6 +10,10 @@
             box-shadow: 0 8px 32px rgba(33,147,176,0.18);
             min-width: 340px;
             border: 2px solid #2193b0;
+            align-content: center;
+            margin: 40px auto;
+            max-width: 500px;
+            box-sizing: border-box;
         }
         .form-container h2 {
             text-align: center;
@@ -68,11 +62,11 @@
             background: linear-gradient(90deg, #6dd5ed, #2193b0);
         }
     </style>
-</head>
-<body>
+@endsection
+@section('content')
     <div class="form-container">
         <h2>Employee Details</h2>
-        <form action="employee-list" method="post">
+        <form action="employee-listform" method="post">
             @csrf
             <div class="form-group">
                 <label for="id">ID:</label>
@@ -93,3 +87,4 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+@endsection

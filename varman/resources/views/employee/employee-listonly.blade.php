@@ -1,4 +1,5 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master') --}}
+@extends('layouts.dashboard')
 @section('header', 'Employee Data')
 @section('title', 'Employee Details')
 @section('css')
@@ -111,7 +112,7 @@
                     </tr>
                     <tr>
                         <td class="text-center">
-                            <a href="/" class="btn-back">Back to Home</a>
+                            <a href="/emp" class="btn-back">Back to Home</a>
                         </td>
                     </tr>
                 </tbody>

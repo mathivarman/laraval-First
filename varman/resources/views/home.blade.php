@@ -1,11 +1,12 @@
 
-@extends('layouts.master')
+{{-- @extends('layouts.master') --}}
 {{-- @section('sidebar')
     @parent
     <li>
         <a href="/employee-details">Employee Details</a>
     </li>
 @endsection --}}
+@extends('layouts.dashboard')
 @section('header', 'Home Page')
 @section('title', 'Home Page')
 @section('content')

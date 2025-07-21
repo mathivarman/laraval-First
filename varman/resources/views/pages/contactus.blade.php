@@ -1,4 +1,5 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master') --}}
+@extends('layouts.dashboard')
 @section('header', 'Contact Us Page')
 @section('title', 'Contact Us Page')
 @section('content')
