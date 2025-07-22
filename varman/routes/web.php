@@ -3,7 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\SthudentController;
 
+// Route::view('/', 'student.create');
+
+
+Route::resource('student', SthudentController::class);
 
 // Route::view('/', 'layouts.dashboard');
 
@@ -12,23 +17,23 @@ use Illuminate\Http\Request;
 // });
 
 
-Route::view('/', 'home');
-Route::view('about', 'pages.about');
-Route::view('contact', 'pages.contactus');
-Route::view('photo', 'pages.photo');
+// Route::view('/', 'home');
+// Route::view('about', 'pages.about');
+// Route::view('contact', 'pages.contactus');
+// Route::view('photo', 'pages.photo');
 
 
-Route::get('emp', function () {
-    return view('employee.employee-dataonly');
-});
+// Route::get('emp', function () {
+//     return view('employee.employee-dataonly');
+// });
 
-Route::get('emp-form', function () {
-    return view('employee.employee-form');
-});
+// Route::get('emp-form', function () {
+//     return view('employee.employee-form');
+// });
 
-Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1", $name="mathi", $telephone="077", $NIC="200115600669") {
-    return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
-});
+// Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1", $name="mathi", $telephone="077", $NIC="200115600669") {
+//     return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
+// });
 
 // Route::get('/', function () {
 //     return view('form.input');
@@ -64,14 +69,14 @@ Route::get('employee-list/{ID?}/{name?}/{telephone?}/{NIC?}', function ($ID="1",
 //     return view('employee.employee-form');
 // });
 
-Route::post('employee-listform', function (Request $request) {
-    $ID=$request->input('id');
-    $name=$request->input('name');
-    $telephone=$request->input('telephone');
-    $NIC=$request->input('nic');
+// Route::post('employee-listform', function (Request $request) {
+//     $ID=$request->input('id');
+//     $name=$request->input('name');
+//     $telephone=$request->input('telephone');
+//     $NIC=$request->input('nic');
 
-     return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
-});
+//      return view('employee.employee-listonly',['ID' => $ID, 'name' => $name, 'telephone' => $telephone, 'NIC' => $NIC]);
+// });
 
 
 // Route::get('get-form', function () {
