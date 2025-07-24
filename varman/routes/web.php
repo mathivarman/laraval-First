@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use App\Http\Controllers\SthudentController;
 
 
 Route::resource('student', SthudentController::class);
+Route::resource('employees', EmployeeController::class);
 
 // Route::view('/', 'layouts.dashboard');
 

@@ -71,8 +71,9 @@
 </head>
 <body>
     <div class="container">
-        <form action="/student" method="get">
+        <form action="/student/1" method="post">
             @csrf
+            @method('put')
             <h2>Edit Student</h2>
             <div class="form-group">
                 <label for="fname">First Name</label>
@@ -82,7 +83,11 @@
                 <label for="lname">Last Name</label>
                 <input type="text" id="lname" name="lname" required>
             </div>
-            <button type="submit" class="btn">Edit</button>
+            
+            <button type="submit" class="btn">Edit</button><br>
+            {{-- @method('delete')
+            <button type="submit" class="btn" formaction="/student/1" formmethod="post">Delete</button> --}}
+
         </form>
     </div>
 </body>

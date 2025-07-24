@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8" />
     <title>Student List</title>
@@ -48,7 +47,6 @@
         }
     </style>
 </head>
-
 <body>
     <h1 style="text-align: center;">All Details</h1>
     <table>
@@ -74,5 +72,4 @@
         </tr>
     </table>
 </body>
-
 </html>

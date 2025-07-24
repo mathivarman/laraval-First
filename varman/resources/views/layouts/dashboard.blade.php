@@ -271,52 +271,58 @@
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">
-            <i class="fa-solid fa-house"></i>
-            Home
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('photo') ? 'active' : '' }}" href="/photo">
-            <i class="fa-solid fa-image"></i>
-            Photo
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('about') ? 'active' : '' }}" href="/about">
-            <i class="fa-solid fa-circle-info"></i>
-            About
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('contact') ? 'active' : '' }}" href="/contact">
-            <i class="fa-solid fa-envelope"></i>
-            Contact Us
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('emp') ? 'active' : '' }}" href="/emp">
-            <i class="fa-solid fa-user-tie"></i>
-            Employee
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('emp-form') ? 'active' : '' }}" href="/emp-form">
-            <i class="fa-solid fa-user-tie"></i>
-            Employee Form
-        </a>
-    </li>
-</ul>
-                        <h6
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('/') ? 'active' : '' }}"
+                                    aria-current="page" href="/">
+                                    <i class="fa-solid fa-house"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('photo') ? 'active' : '' }}"
+                                    href="/photo">
+                                    <i class="fa-solid fa-image"></i>
+                                    Photo
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('about') ? 'active' : '' }}"
+                                    href="/about">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('contact') ? 'active' : '' }}"
+                                    href="/contact">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('emp') ? 'active' : '' }}"
+                                    href="/employees">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    Employee
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('emp-form') ? 'active' : '' }}"
+                                    href="/employees/create">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    Create Employee
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- <h6
                             class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
                             <span>Saved reports</span> <a class="link-secondary" href="#"
                                 aria-label="Add a new report">
                                 <svg class="bi" aria-hidden="true">
                                     <use xlink:href="#plus-circle"></use>
                                 </svg> </a>
-                        </h6>
-                        <ul class="nav flex-column mb-auto">
+                        </h6> --}}
+                        {{-- <ul class="nav flex-column mb-auto">
                             <li class="nav-item"> <a class="nav-link d-flex align-items-center gap-2" href="#">
                                     <svg class="bi" aria-hidden="true">
                                         <use xlink:href="#file-earmark-text"></use>
@@ -356,17 +362,17 @@
                                     </svg>
                                     Sign out
                                 </a> </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    @yield('content')
+
                 </div>
                 <div class="table-responsive small">
-
+                    @yield('content')
                 </div>
             </main>
 

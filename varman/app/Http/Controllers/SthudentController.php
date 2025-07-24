@@ -52,7 +52,8 @@ class SthudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($request->all());
+        return "updated";
     }
 
     /**
@@ -60,6 +61,6 @@ class SthudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return 'delete';
     }
 }
